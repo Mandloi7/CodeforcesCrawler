@@ -10,9 +10,40 @@ import time
 from bs4 import BeautifulSoup
 import lxml.html as lh
 import pandas as pd
+from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+import requests
+import urllib.request
+from html.parser import HTMLParser
+from html.entities import name2codepoint
+import time
+from bs4 import BeautifulSoup
+import lxml.html as lh
+import pandas as pd
+from django.contrib.sites import requests
+import requests, bs4, csv, json, time
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+import matplotlib
+import numpy
+import json
+from django.urls import reverse
+from collections import Counter
 
 # Create your views here.
 def home(request):
+
+    if request.POST:
+        if request.POST['handle']:
+            url = 'https://codeforces.com/api/user.info?handles=' + str(request.POST['handle'])
+            response = requests.get(url)
+            name = str(request.POST['handle'])
+            soup2 = bs4.BeautifulSoup(response.text, "html.parser")
+            l2 = json.loads(str(soup2))
+            if l2['status'] != 'OK':
+                return render(request, 'home_page.html', {'flag': 1})
+            else:
+                return render(request, 'analysis.html', {'name' :name})
     url = 'https://codeforces.com/contests'
     response = requests.get(url)
     doc = lh.fromstring(response.content)

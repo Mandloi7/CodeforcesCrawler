@@ -7,19 +7,21 @@ CF Crawler
 
 {% block B %}
 <div class="container mt-5 ">
-	<div class="jumbotron">
+	<div class="jumbotron" style="background-color: lightblue;">
 <h1 style="float: left;">
     THE CODEFORCES CRAWLER
 </h1>
-<form style="float: right;" method="post" >
+<form style="float: right;" method="post" action="{% url 'Codeforces:home' %}">
+	{% csrf_token %}
 	<label for="handle" >Search Codeforces Handle</label>
 	<input type="text" name="handle"></input>
-	</form>
+	{% if flag %}<h6 style="color:red;">Enter Correct Handle ! </h6>{% endif %}
+</form>
 </div>
 </div>
 <div class="container ">
 	
-<div class="jumbotron">
+<div class="jumbotron" style="background-color: lightblue;">
     <table>
         <tr>
             <th>
@@ -38,7 +40,7 @@ CF Crawler
     </table>
 </div>
 <br>
-<div class="jumbotron">
+<div class="jumbotron" style="background-color: lightblue;">
     <table>
         <tr>
             <th>

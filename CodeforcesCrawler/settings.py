@@ -118,4 +118,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = 'Codeforces/static/'
+STATIC_URL = '/Codeforces/static/'
+STATIC_DIR = os.path.join(BASE_DIR, 'Codeforces/static')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
