@@ -1,9 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>CF Crawler</title>
-</head>
-<body>
-HELLO WORLD
-</body>
-</html>
+{% extends 'base.html' %}
+{load static}
+
+{% block T %}
+CF Crawler
+{% endblock %}
+
+{% block B %}
+<div class="container mt-5 ">
+	<div class="jumbotron">
+<h1 style="float: left;">
+    THE CODEFORCES CRAWLER
+</h1>
+<form style="float: right;" method="post" >
+	<label for="handle" >Search Codeforces Handle</label>
+	<input type="text" name="handle"></input>
+	</form>
+</div>
+</div>
+<div class="container ">
+	
+<div class="jumbotron">
+    <table>
+        <tr>
+            <th>
+                Codeforces Contest
+            </th>
+            <th>
+                Date and Time
+            </th>
+        </tr>
+        {% for i in cfcontests %}
+            <tr>
+                <td>{{i.con}}</td>
+                <td>{{i.time}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<br>
+<div class="jumbotron">
+    <table>
+        <tr>
+            <th>
+                Codechef Contest
+            </th>
+            <th>
+               Date and Time
+            </th>
+        </tr>
+        <tr>
+            <td>{{c3}}</td>
+            <td>{{t3}}</td>
+        </tr>
+        <tr>
+            <td>{{c4}}</td>
+            <td>{{t4}}</td>
+        </tr>
+    </table>
+</div>
+</div>
+
+{% endblock %}
