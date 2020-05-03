@@ -3,31 +3,62 @@
 {% block T %} {{name}}{% endblock %}
 {% block B %} 
 
+{% block hed %}
+<style type="text/css">
+td
+{
+    padding:0 15px;
+}
+</style>
+{% endblock %}
 
+<div>
+    <h1 align="center" style="font-size: 50px;">
+     {{name}} 
+</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-{{name}}
-
-
-
-
-
-
-
-
-
-
+</div>
+<div align="center">
+    <h1 style="font-size: 35px;color:red;">
+        Contest Analysis
+    </h1>
+    <br>
+    <table class="mytables">
+    
+    <tr>
+        <td>Rating</td>
+        <td>{{current_rating}}</td>
+    </tr>
+    <tr>
+        <td>Max Rating</td>
+        <td>{{max_rating}}</td>
+    </tr>
+    <tr>
+        <td>Lowest Rating</td>
+        <td>{{lowest_rating}}</td>
+    </tr>
+    <tr>
+        <td>No. of Contests</td>
+        <td>{{contest_count}}</td>
+    </tr>
+    <tr>
+        <td>Best Rank</td>
+        <td>{{best_rank}}</td>
+    </tr>
+    <tr>
+        <td>Worst Rank</td>
+        <td>{{worst_rank}}</td>
+    </tr>
+    <tr>
+        <td>Max Up</td>
+        <td>{{max_up}}</td>
+    </tr>
+    <tr>
+        <td>Max Down</td>
+        <td>{{max_down}}</td>
+    </tr>
+</table>
+</div>
 
 
 
