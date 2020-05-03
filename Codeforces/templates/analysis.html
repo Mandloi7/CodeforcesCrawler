@@ -144,6 +144,21 @@ td
 </table>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div  class="unsolved" align="center" >
+    <h1>Unsolved Questions</h1>
+    {% for i in unsolved_problems %}
+        <a href="{{i.link}}" target="_blank">{{i.name}}</a>
+    {% endfor %}
+    <br><br>
+</div>
+
+
 
 
 {% endblock %}
