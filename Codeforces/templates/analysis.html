@@ -69,7 +69,7 @@ td
 </div>
 
 
-<div  class="col-5" style="float: right;background-color: green;">
+<div  class="col-5" style="float: right;background-color: green;padding-bottom: 80px;">
      <div class="ml-5 mr-5" >
     <h1 style="font-size: 30px;color:blue;">
         Submissions
@@ -100,6 +100,49 @@ td
 </div>
 </div>
 
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<br>
+<div class="container" align="center" style="margin-top: 100px;">
+    <h1 style="font-size: 30px;color:blue;">
+    Contests And Rating! {{contest_count}}
+    </h1>
+    <h3 style="font-size: 20px;color:purple;">
+    No.of Contests :  {{contest_count}}
+    </h3>
+    <table class="contests">
+    <tr>
+        <th>index</th>
+        <th>Contest Name</th>
+        <th>Rank</th>
+        <th>old rating</th>
+        <th>new rating</th>
+        <th>change</th>
+    </tr>
+    {% for t in c %}
+    <tr>
+        <td>{{t.count}}</td>
+        <td><a href="{{t.link}}" target="_blank">{{t.con}}</a></td>
+        <td>{{t.rank}}</td>
+        <td>{{t.old}}</td>
+        <td>{{t.new}}</td>
+        <td>{{t.change}}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+</div>
 
 
 
